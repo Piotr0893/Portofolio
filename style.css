@@ -29,7 +29,10 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+      display: flex;
+    align-items: center;
 }
+
 .bar {
   width: 100%;
   padding: 10px 0;
@@ -44,7 +47,7 @@ body {
 .big-circle  {
     position: absolute;
     top: -200px;
-    right: -410px;
+    right: -422px;
     width: 1500px;
     height: 1500px;
     border-left: 12px solid purple;
@@ -67,14 +70,14 @@ body {
   opacity: 0.77;
 }
 
-.very-small-circle {
+.bounce-ball {
   position: absolute;
   top: 0px;
   left: 200px;
   width: 100px;
   height: 100px;
   background-color: rgb(2, 15, 202);
-  animation: bounce-out-left 1.5s both ;
+  animation: bounce-out-left 1.5s 0.2s both ;
   border-radius: 50%;
   opacity: 1;
   z-index: 1;
@@ -89,13 +92,9 @@ h1 {
     margin-bottom: 30px;
     color: #000000;
     text-transform: capitalize;
-    animation: slide-in-left 0.5s 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-left 0.5s 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.rect-span-container {
-    display: flex;
-    align-items: center;
-}
 
 .span-container {
     display: flex;
@@ -105,9 +104,7 @@ h1 {
     margin-left: 400px;
     animation: text-pop-up 0.5s 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-.rect-container {
-    margin-top: 20px; 
-}
+
 
 #linear, #ease, #ease-in, #ease-out, #ease-in-out {
     width: 410px;
@@ -362,8 +359,8 @@ h1 {
             animation-timing-function: ease-out;
   }
   52% {
-    -webkit-transform: translateX(-80px);
-            transform: translateX(-80px);
+    -webkit-transform: translateX(-180px);
+            transform: translateX(-180px);
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
@@ -398,6 +395,7 @@ h1 {
 }
   
 .main {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -408,17 +406,112 @@ h1 {
     -ms-user-select: none;
     user-select: none;
 }
+.article-1 {
+  flex: 1
+}
+.article-2 {
+  flex: 1;
+  margin-left: 100px;
+}
+
+
+.container-ball {
+  flex: 2;
+  margin-left: 150px;
+  position: relative;
+  transform: translateY(-100px);
+  user-select: none;
+}
+.container-ball::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 200px;
+  border-radius: 50%;
+  background: #fff;
+  animation: animate-circle 3s ease-in-out infinite;
+
+}
+
+@keyframes animate-circle {
+  0% {
+      transform: translateX(20px)
+  }
+  50% {
+      transform:  translateX(-20px)
+  }
+  100% {
+      transform:  translateX(20px)
+  }
+}
+
+.container-ball .loader-ball{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: animate-loader 3s ease-in-out infinite;
+}
+
+@keyframes  animate-loader {
+  0% {
+      transform: rotate(50deg);
+ }
+ 50% {
+  transform: rotate(-50deg);
+ }
+ 100% {
+  transform: rotate(50deg);
+  }
+}
+
+.container-ball .loader-ball::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 100px;
+  background: rgb(2, 15, 202);
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.container-ball .loader-ball .ball{
+  position: absolute;
+  background: #f80000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top:50%;
+  left: -15px;
+  transform: translateY(-100%);
+  animation: animate-ball 3s ease-in-out infinite;
+}
+
+@keyframes animate-ball {
+  0% {
+      transform: translateY(-100%) translateX(-30px)
+  }
+  50% {
+      transform: translateY(-100%) translateX(220px)
+  }
+  100% {
+      transform: translateY(-100%) translateX(-30px)
+  }
+}
+.footer {
+  margin-top: 150px;
+}
 
 input {
   border-radius: 8px;
   padding: 5px 10px;
-   
 }
 
 button {
   border-radius: 8px;
   padding: 5px 10px;
-  animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955)  both;
+  animation: shake-lr 0.7s 3s cubic-bezier(0.455, 0.030, 0.515, 0.955)  both;
 }
 
   
