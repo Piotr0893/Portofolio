@@ -7,6 +7,7 @@
 }
 
 body {
+  
     background-color: rgb(212, 209, 203);
     color: black;
     margin-left: 100px;
@@ -88,6 +89,7 @@ h1 {
     text-align: center;
     height: 100px;
     font-size: 3em;
+  
     margin-top: 30px;
     margin-bottom: 30px;
     color: #000000;
@@ -101,6 +103,7 @@ h1 {
     color: #000000;
     flex-direction: column;  
     font-size: 2em;
+    font-weight: 700;
     margin-left: 400px;
     animation: text-pop-up 0.5s 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -407,20 +410,24 @@ h1 {
     user-select: none;
 }
 .article-1 {
-  flex: 1
+  flex: 1;
+  font-size: 18px;
 }
 .article-2 {
   flex: 1;
   margin-left: 100px;
+  font-size: 18px;
 }
 
 
 .container-ball {
   flex: 2;
-  margin-left: 150px;
+  margin-left: 250px;
   position: relative;
   transform: translateY(-100px);
   user-select: none;
+  z-index: 1;
+  opacity: 0.7;
 }
 .container-ball::before {
   content: '';
@@ -429,8 +436,9 @@ h1 {
   height: 200px;
   top: 200px;
   border-radius: 50%;
-  background: #fff;
+  background: #ffffff;
   animation: animate-circle 3s ease-in-out infinite;
+  
 
 }
 
@@ -478,7 +486,7 @@ h1 {
 
 .container-ball .loader-ball .ball{
   position: absolute;
-  background: #f80000;
+  background: #000000;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -499,19 +507,62 @@ h1 {
       transform: translateY(-100%) translateX(-30px)
   }
 }
-.footer {
-  margin-top: 150px;
+.form {
+  top: 10;
+  position: absolute;
+  background: white;
+  margin-left: 1050px;
+  border: 1px solid black;
+  width: 50vh;
+  height: 250px;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2)) ;
+  border: none;
+  border-radius: 1.8rem;
+  user-select: none;
+  z-index: 2;
+
+
 }
 
 input {
+  justify-self: end;
   border-radius: 8px;
+  bottom: 0;
   padding: 5px 10px;
+  margin: 180px 10px 10px 20px;
+  transition: 1s;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2)) ;
+  color: black;
+  border: none;
+  border-radius: 2rem;
+
+ 
+}
+
+input:hover{
+  transform: scaleX(1.1);
 }
 
 button {
   border-radius: 8px;
   padding: 5px 10px;
-  animation: shake-lr 0.7s 3s cubic-bezier(0.455, 0.030, 0.515, 0.955)  both;
+  border: none;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2)) ;
+  color: black;
+
+}
+
+button:hover {
+  animation: shake-lr 0.7s  cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+  
+input::placeholder {
+  color: black;
+} 
+
+button:hover {
+  animation: shake-lr 0.7s  cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
   
